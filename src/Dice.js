@@ -3,8 +3,7 @@ import { useState } from 'react';
 
 function Dice() {
   // let randomNum; 
-  let [number, setNumber] = useState(1);
-  number = Math.floor(Math.random()*6) + 1
+  let [number, setNumber] = useState("?");
 
   function roll()
   {
