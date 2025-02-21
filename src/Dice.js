@@ -1,27 +1,21 @@
-import './Dice.css';
-import { useState } from 'react';
+import Die from './Die.js';
 
-function Dice() {
-  // let randomNum; 
-  let [number, setNumber] = useState("?");
 
-  function roll()
-  {
-    let randomNum = Math.floor(Math.random()*6) + 1;
-    // console.log("Random:" + randomNum);
-    // console.log("Num Ant:" + number);
-        while(randomNum == number){
-      randomNum = (Math.floor(Math.random()*6) + 1);
+function GetDice(quantity){
+    let diceList = [];
+    for(let i = 0; i < quantity; i++){
+        diceList.push(<Die key={i}/>)
     }
-    setNumber(randomNum);
-  }
+    // console.log(diceList);
+    return diceList;
+}
 
-
-  return (
-    <button className='Dice' onClick={roll}>
-      <p className='DiceNumber'>{number}</p>
-    </button>
-  );
+function Dice(prop){
+    return(
+    <section className = 'DiceStructure'>
+        {GetDice(prop.quantity, prop.roll)}
+    </section>
+    );
 }
 
 export default Dice;
