@@ -1,5 +1,5 @@
 import './App.css';
-// import Die from './Die';
+import Die from './Die';
 import Dice from './Dice';
 import Title from './Title';
 import Timer from './Timer';
@@ -14,6 +14,9 @@ function App() {
   function Roll_Dice(){
     // alert("RUEDA");
     setRoll(true);
+    setTimeout(() => {
+      setRoll(false);
+    }, 1000);
   }
 
   return (
