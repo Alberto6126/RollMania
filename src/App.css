@@ -1,3 +1,207 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.gameWindow {
+  margin-top: 20px;
+  background-color: rgb(49, 163, 83);
+  background-image: url('/public/images/rollmaniaBg.webp');
+  width: 1280px;
+  height: 720px;
+  border-radius: 30px;
+  position: relative; /* Add relative positioning */
+}
+
+.RollButton {
+  /* margin-bottom: 100px; */
+  background-color: #6977ff;
+  transition: .3s;
+}
+
+.RollButton:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Consistente con el hover de los puntajes y dados */
+  transform: scale(1.05); /* Efecto de escala suave */
+  transition: .3s;
+  background-color: #5a68e6; /* Consistente con el hover de los puntajes y dados */
+}
+
+.RollButtonDisabled {
+  /* margin-bottom: 100px; */
+  background-color: #878dac; /* Light red background */
+  transition: .3s;
+}
+
+.RollButtonDisabled:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Consistente con el hover de los puntajes y dados */
+  transform: scale(1.05); /* Efecto de escala suave */
+  transition: .3s;
+  background-color: #727899; /* Consistente con el hover de los puntajes y dados */
+}
+
+.title {
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 5vw; /* Responsive font size */
+  color: rgb(7, 0, 41);
+  margin: 0;
+  font-weight: bolder;
+}
+
+.RollButton, .RollButtonDisabled {
+  margin-bottom: 0;
+  padding-left: 80px;
+  padding-right: 80px;
+  bottom: 40px;
+  width: 620px;
+  height: 95px;
+  border-radius: 10px;
+  outline-style: solid;
+  outline-color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  font-size: 4.5em;
+  font-weight: bolder;
+  border: none;
+  position: absolute;
+  left: 26%;
+  transition: .3s;
+}
+
+.DiceStructure, .EnemyStructure {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  bottom: 260px;
+  position: absolute;
+  rotate: 40deg;
+  /* background-color: #8587ff; */
+}
+
+.DiceStructure {
+  left: 100px;
+}
+
+.EnemyStructure {
+  left: 800px;
+}
+
+.Die, .EnemyDie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 84px;
+  color: rgb(16, 11, 87);
+  font-weight: bolder;
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  border-radius: 16px;
+  outline: 2px solid rgb(0, 1, 66);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Consistente con la sombra de los puntajes */
+  transition: all 0.3s ease;
+}
+
+
+.Die{
+  background-color: #fff; /* Consistente con el fondo de los puntajes */
+}
+
+.EnemyDie{
+  background-color: #ff6565; /* Consistente con el fondo de los puntajes */
+}
+
+
+.punctuation{
+  color: white;
+  font-size: 70px;
+  font-weight: bolder;
+  transition: 1s;
+}
+.playerPunct{
+  position: absolute;
+  left: 46%;
+  bottom: 40%;
+  rotate: -38deg;
+}
+
+.enemyPunct{
+  position: absolute;
+  left: 50%;
+  bottom: 27%;
+  rotate: -38deg;
+}
+
+.LeaderboardIco{
+  height: 120px;
+  width: 120px;
+  outline-style: none;
+  border: none;
+  background-color: transparent;
+  background-image: url('/public/images/leaderboard.webp');
+  background-size:cover;
+  transition: .3s;
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+}
+.LeaderboardIco:hover{
+  transform: scale(1.05);
+  transition: .3s;
+  filter:brightness(.9);
+}
+
+.AudioIcoTrue, .AudioIcoFalse{
+  height: 120px;
+  width: 120px;
+  outline-style: none;
+  border: none;
+  background-color: transparent;
+  background-size:cover;
+  transition: .3s;
+  position: absolute;
+  left: 20px;
+  bottom: 130px;
+  transition: .3s ;
+}
+
+.AudioIcoTrue{
+  transition: .3s ;
+  background-image: url('/public/images/speaker.webp');
+}
+
+.AudioIcoFalse{
+  transition: .3s ;
+  background-image: url('/public/images/speakerMuted.webp');
+}
+
+.AudioIcoTrue:hover, .AudioIcoFalse:hover{
+  transform: scale(1.05);
+  transition: .3s;
+  filter:brightness(.9);
+}
+
+.AlertIco{
+  height: 120px;
+  width: 120px;
+  outline-style: none;
+  border: none;
+  background-color: transparent;
+  background-image: url('/public/images/alert.webp');
+  background-size:cover;
+  transition: .3s;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+.AlertIco:hover{
+  transform: scale(1.05);
+  transition: .3s;
+  filter:brightness(.9);
 }

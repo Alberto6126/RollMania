@@ -1,32 +1,28 @@
-import './Die.css';
+import './App.css';
 import { useState, useEffect } from 'react';
 
-function Die(props) {
-  // let randomNum; 
+function Die({ roll, className, value }) {
   let [number, setNumber] = useState("¿?");
-  let [isRolling, setRoll] = useState(false);
 
-  function setRandom()
-  {
-    let randomNum = Math.floor(Math.random()*6) + 1;
-    // console.log("Random:" + randomNum);
-    // console.log("Num Ant:" + number);
-        while(randomNum == number){
-      randomNum = (Math.floor(Math.random()*6) + 1);
-    }
-    setNumber(randomNum);
-  }
+  // function setRandom() {
+  //   let randomNum = Math.floor(Math.random() * 6) + 1;
+  //   while (randomNum === number) {
+  //     randomNum = Math.floor(Math.random() * 6) + 1;
+  //   }
+  //   setNumber(randomNum);
+  // }
 
   useEffect(() => {
-    if (props.roll) {
-      setRandom();
+    if (roll) {
+      // setRandom();
+      setNumber(value);
     }
-  }, [props.roll]);
-
+  }, [roll]);
+  // console.log("Class name die: ", className);
   return (
-    <button className='Die' onClick={setRandom}>
+    <div className={className}>
       <p className='DieNumber'>{number}</p>
-    </button>
+    </div>
   );
 }
 
