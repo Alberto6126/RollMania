@@ -12,7 +12,7 @@ function GetDice(quantity, roll, dieClass, values) {
 
 function Dice({ quantity, roll, classNa, values }) {
     const dieClass = classNa === "EnemyStructure" ? "EnemyDie" : "Die";
-    console.log("Dice class: ", dieClass);
+    // console.log("Dice class: ", dieClass);
     return (
         <div className={classNa}>
             {GetDice(quantity, roll, dieClass, values)}

@@ -1,14 +1,27 @@
 import './Score.css';
+// import ScoreItem from './ScoreItem'; 
+
+
 
 function Score(){
     return(
         <div className="ScoreContainer">
             <ol>
-                <li>0</li>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
+                {/* {ScoreItem}; */}
+                <li>ASD -- 123</li>
+                <li>ADD -- 23</li>
+                <li>ASD -- 123</li>
+                <li>ADD -- 23</li>
+                <li>ASD -- 123</li>
+                <li>ADD -- 23</li>
+                <li>ASD -- 123</li>
+                <li>ADD -- 23</li>
+                <li>ASD -- 123</li>
+                <li>ADD -- 23</li>
+                <li>ASD -- 123</li>
+                <li>ADD -- 23</li>
+                <li>ASD -- 123</li>
+                <li>ADD -- 23</li>
             </ol>
         </div>
     );

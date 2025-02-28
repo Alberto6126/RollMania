@@ -1,14 +1,31 @@
+.ScoreContainer::-webkit-scrollbar{
+    width: 20px;
+}
+.ScoreContainer::-webkit-scrollbar-thumb{
+    background-color: #c2bef3;
+    border-radius: 30px;
+}
+.ScoreContainer::-webkit-scrollbar-corner{
+    display: none;
+}
+.ScoreContainer::-webkit-scrollbar-track{
+    /* border-radius: 30px; */
+    display: none;
+}
 .ScoreContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
+    height: 540px;
+    background-color: #d3d0ff;
+    border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px; /* Limita el tamaño horizontal */
     margin: 0 auto; /* Centra el contenedor horizontalmente */
+    overflow: scroll;     
 }
+
 
 ol {
     list-style-position: inside;
@@ -21,8 +38,11 @@ ol {
 li {
     margin: 10px 0;
     padding: 10px;
+    padding-top: 30px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 30px;
+    outline-style: solid;
+    outline-color: #c2bef3;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     transition: transform 0.5s;
 }

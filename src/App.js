@@ -5,7 +5,9 @@ import Dice from './Dice';
 import Title from './Title';
 // import Timer from './Timer';
 import RollButton from './RollButton';
+import Score from './Score';
 import GamePunct from './GamePunct';
+import PlayerInfo from './PlayerInfo';
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
   let [enemyDiceValues, setEnemyDiceValues] = useState([Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1]);
   let [GamePoints, setGamePoints] = useState([0,0]);
   let [audioClass, setAudioClass] = useState("AudioIcoTrue");
+  let [menu, setMenu] = useState("MenuWindowFalse");
+  let [GameItemsClass, setGameItemsClass] = useState("GameItemsTrue");
 
   function Roll_Dice(){
     // alert("RUEDA");
@@ -38,6 +42,10 @@ function App() {
     <main className='App'>
       <Title text="RollMania!"/>
       <section className="gameWindow">
+        <section className={menu}>
+          <Score />
+        </section>
+      <section className={GameItemsClass}>
       <Dice quantity="2" roll={roll} classNa="DiceStructure" values={diceValues}/>
       <Dice quantity="2" roll={roll} classNa="EnemyStructure" values={enemyDiceValues}/>
       {/* <Dice quantity="2" roll={roll}/> */}
@@ -49,8 +57,9 @@ function App() {
         {/* <Timer /> */}
         <RollButton func_roll={Roll_Dice}/>
       </section>
+      </section>  
       <section className='LeaderboardIcoContainer'>
-        <input className='LeaderboardIco' type="button" value=""/>
+        <input className='LeaderboardIco' type="button" value="" onClick={()=>{if(menu==="MenuWindowFalse"){setMenu("MenuWindowTrue"); setGameItemsClass("GameItemsFalse")}else{setMenu("MenuWindowFalse"); setGameItemsClass("GameItemsTrue")}}}/>
       </section>
       <section className='AudioContainer'>
         <input className={audioClass} type="button" value="" onClick={()=>{if(audioClass==="AudioIcoTrue"){setAudioClass("AudioIcoFalse")}else{setAudioClass("AudioIcoTrue")}}}/>
@@ -58,7 +67,7 @@ function App() {
       <section className='AlertContainer'>
         <input className='AlertIco' type="button" value=""/>
       </section>
-        {/* <Score /> */}
+        <PlayerInfo />
       </section>
 
     </main>
